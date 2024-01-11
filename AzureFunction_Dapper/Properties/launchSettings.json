@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AzureFunction_Dapper": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7083",
+      "launchBrowser": false
+    }
+  }
+}
