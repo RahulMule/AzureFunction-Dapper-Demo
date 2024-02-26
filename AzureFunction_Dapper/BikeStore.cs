@@ -45,8 +45,8 @@ namespace AzureFunction_Dapper
 				using var connection = GetSqlConnection();
                 var bike = await new StreamReader(req.Body).ReadToEndAsync();
                 Bike samplebike = JsonSerializer.Deserialize<Bike>(bike);
-				var sql = @"INSERT INTO Bikes (Brand, Model, Type, Price) 
-                            VALUES (@Brand, @Model, @Type, @Price);
+				var sql = @"INSERT INTO Bikes (BikeID,Brand, Model, Type, Price) 
+                            VALUES (@BikeID, @Brand, @Model, @Type, @Price);
                             SELECT CAST(SCOPE_IDENTITY() AS INT);";
 				var insertedBikeId = await connection.ExecuteScalarAsync<int>(sql, samplebike);
 				samplebike.BikeID = insertedBikeId;
