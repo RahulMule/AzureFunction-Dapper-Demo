@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AzureFunction_Dapper.Models
 {
     public class Bike
     {
-        [Key] 
-        public int Id { get; set; }
-        [Required] 
-        public string Brand { get; set; }
-        [Required]
-        public string Model { get; set; }
-        [Required]
-        public int EngineCapacity { get; set; }
-        [Required]
-        public string EngineName { get; set; }
-    }
+		[JsonIgnore]
+		public int BikeID { get; set; }
+		public string Brand { get; set; }
+		public string Model { get; set; }
+		public string Type { get; set; }
+		public decimal Price { get; set; }
+
+	}
 }
