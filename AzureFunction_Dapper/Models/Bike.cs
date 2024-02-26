@@ -10,7 +10,7 @@ namespace AzureFunction_Dapper.Models
 {
     public class Bike
     {
-		[JsonIgnore]
+		
 		public int BikeID { get; set; }
 		public string Brand { get; set; }
 		public string Model { get; set; }
